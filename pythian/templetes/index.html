@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+{% block medicalform %}
+<div class="container" style = "padding-top:50px; padding-bottom: 100px;" >
+<form method = "POST" action="/result">
+{% csrf_token %}
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Name</label>
+    <input type="name" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Please enter your name">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email id</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" name="mail" placeholder="example@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Age</label>
+    <input type="name" class="form-control" id="exampleFormControlInput1" name="age" placeholder="Please enter your age">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Gender</label>
+    <select name="gender" class="form-control" id="exampleFormControlSelect1" name = "gender">
+      <option>male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Symptoms</label>
+    <select name="symptoms" name = "symptoms" class="form-control" id="exampleFormControlSelect1">
+      <option>Cold</option>
+      <option>cough</option>
+      <option>Fever</option>
+      <option>Allergy/Rashes</option>
+      <option>Body Pain</option>
+      <option>Burn</option>
+      <option>Dry/Itchy Eyes</option>
+      <option>Acne</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Number of days</label>
+    <input class="form-control" id="exampleFormControlInput1" name="days" placeholder="No days">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Severity</label>
+    <select name="severe" class="form-control" id="exampleFormControlSelect1">
+      <option>Mild</option>
+      <option>severe</option>
+      <option>chronic</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Messege/Further explanation of your problem</label>
+    <textarea class="form-control" name="msz" id="exampleFormControlTextarea1" rows="2"></textarea>
+  </div>
+ <button type="submit" class="btn btn-primary">submit</button>
+  </div>
+</form>
+{% endblock medicalform %}
