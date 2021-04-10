@@ -35,3 +35,9 @@ def about(request):
 
 def appointment(request):
     return render(request,'appointment.html')
+
+def emergency(request):
+    return render(request, 'emergency.html')
+
+def nearby(request):
+    return render(request, 'nearby.html')

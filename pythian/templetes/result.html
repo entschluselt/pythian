@@ -3,10 +3,10 @@
 {% block result %}
 <div>
 {% for med in medname %}
-<div class="card" style="width: 40rem; margin: auto; margin-top:200px;">
+<div class="card" style="width: 40rem; margin: auto; margin-top:5vh;">
   <div class="card-body">
     <h2>{{med.medicine_data}}</h2>
-    <p class="card-text">{{med.instructions_data}}</p>
+    <p class="card-text">{{med.instructions_data}} <br><br> Our doctor will contact you soon. Consider taking an Appointment, you can do so by heading over to appointment in navigation menu. <br> Take Care </p>
   </div>
 </div>
 {% endfor %}
