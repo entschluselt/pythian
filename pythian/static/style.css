@@ -1,0 +1,12 @@
+body{
+    color: rgb(36, 41, 48);
+    
+}
+nav{
+    background-color: #03af22;
+    font-weight: 400;
+    color: rgb(24, 23, 21);
+}
+nav a{
+    color: #2f3731 !important;
+}

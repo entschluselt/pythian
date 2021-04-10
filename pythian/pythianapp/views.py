@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from pythianapp.models import patients,med_data
 # Create your views here.
 def result(request):
@@ -14,12 +15,16 @@ def result(request):
         patient = patients(name=name, email = email, age = age , gender = gender, symptoms=symptoms, severity=severity,days=days,msz=msz)
         patient.save()
     
-    sym = request.POST.get("symptoms")
-    sev = request.POST.get("severe")
-    med = med_data.objects.filter(data_symptoms=sym, data_severity=sev)
-    context = {
-        'med':med
-    }
+    if request.method == "POST":
+        sym = request.POST.get("symptoms")
+        print(sym)
+        sev = request.POST.get("severe")
+        print(sev)
+        med = med_data.objects.filter(data_symptoms=sym, data_severity=sev)
+        print(med)
+        context = {
+            'medname':med
+        }
     return render(request,'result.html', context)
 
 def index(request):

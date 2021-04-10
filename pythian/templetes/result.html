@@ -1,5 +1,18 @@
 {% extends "base.html" %}
 
 {% block result %}
-<p>this is {{mid.medicine_data}} <br> explanation {{mid.instructions_data}}</p>
+<div>
+{% for med in medname %}
+<div class="card" style="width: 40rem; margin: auto; margin-top:200px;">
+  <div class="card-body">
+    <h2>{{med.medicine_data}}</h2>
+    <p class="card-text">{{med.instructions_data}}</p>
+  </div>
+</div>
+{% endfor %}
+</div>
+</p>
+<style>
+
+</style>
 {% endblock result %}
