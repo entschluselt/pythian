@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div id="contact">
+      <div class="basic">
+        <form
+          action="https://formspree.io/f/mqkwkwrl"
+          method="POST"
+          id="my-form"
+        >
+          <div class="form-group">
+            <label for="firstName">Name</label>
+            <input type="text" id="firstName" name="firstName" />
+          </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" id="firstName" name="age" />
+          </div>
+          <div class="form-group">
+            <label for="Mobile">Whatsapp Number</label>
+            <input type="text" id="firstName" name="whatsapp" />
+          </div>
+          <div class="form-group">
+            <label for="reason">Reason</label>
+            <input type="text" id="firstName" name="Reason" />
+          </div>
+
+          
+          <button type="submit">Submit</button>
+          <div id="status"></div>
+        </form>
+      </div>
+      <div id="status"></div>
+</div>
+
+
+<script>
+window.addEventListener("DOMContentLoaded", function () {
+    // get the form elements defined in your form HTML above
+  
+    var form = document.getElementById("my-form");
+    // var button = document.getElementById("my-form-button");
+    var status = document.getElementById("status");
+  
+    // Success and Error functions for after the form is submitted
+  
+    function success() {
+      form.reset();
+      status.classList.add("success");
+      status.innerHTML = "Thanks!";
+    }
+  
+    function error() {
+      status.classList.add("error");
+      status.innerHTML = "Oops! There was a problem.";
+    }
+  
+    // handle the form submission event
+  
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var data = new FormData(form);
+      ajax(form.method, form.action, data, success, error);
+    });
+  });
+  
+  // helper function for sending an AJAX request
+  
+  function ajax(method, url, data, success, error) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        success(xhr.response, xhr.responseType);
+      } else {
+        error(xhr.status, xhr.response, xhr.responseType);
+      }
+    };
+    xhr.send(data);
+  }</script>
+
+<style>
+.form-group input{
+    width: 98%;
+}
+.basic{
+    margin: auto;
+    width: 50vw;
+    padding-top: 5vh;
+    padding-right: 14vw;
+    font-size: 2vw;
+}
+.basic button{
+    display: block;
+    font-weight: bold;
+    margin-top: 2px;
+    
+
+}
+
+</style>
+
+
+{% endblock body %}

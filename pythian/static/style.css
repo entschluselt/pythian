@@ -3,10 +3,20 @@ body{
     
 }
 nav{
-    background-color: #03af22;
+    /* background-color: #74D698; */
+    background-color: #165A2F;
     font-weight: 400;
     color: rgb(24, 23, 21);
 }
+nav>ul{
+    color: #165A2F !important;
+
+}
 nav a{
-    color: #2f3731 !important;
+    /* color: #4d4d4d !important; */
+    color: #e0dfdf !important;
+}
+.about{
+    margin: auto;
+    min-width: 70vw ;
 }
