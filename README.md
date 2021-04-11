@@ -15,8 +15,6 @@
 ## Presentation Link:
   <a href="https://docs.google.com/presentation/d/1iujIyn0WYOwhNYgQ9ybRVxbU9YhE8gtl/edit#slide=id.p1"> PRESENTATION </a>
   
-  
-## Table of Contents:
 
 ## Technology Stack:
   1) HTML/CSS/JAVASCRIPT
